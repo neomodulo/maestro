@@ -3,25 +3,26 @@ import tkinter as tk
 from PIL import Image
 from PIL import ImageTk
 
+#Tk window setup
 window = tk.Tk()
-
 window.minsize(320, 480)
 window.maxsize(320, 480)
 window.geometry("320x480+600+200") #The +300s are for testing purposes, not for the pi itself.
 window.title("maestro")
-
+#Grid structure definition - see included spreadsheet
 rows, cols = (5, 7)
 grid = [[0]*cols]*rows
-
+#Color Scheme - Might be changeable with themes later?
 lgray = "#BCBCBC"
 dgray = "#999999"
-
+#Top Bar - might need to make this bigger
 grid[0][0] = tk.Label(window,text="⚙",      bg=lgray).grid(row=0,column=0,padx=2)
 grid[0][0] = tk.Label(window,text="|",      bg=lgray).grid(row=0,column=1,padx=44)
 grid[0][2] = tk.Label(window,text="maestro",bg=lgray).grid(row=0,column=2,padx=2)
 grid[0][3] = tk.Label(window,text="|",      bg=lgray).grid(row=0,column=3,padx=44)
 grid[0][4] = tk.Label(window,text="㍶",     bg=lgray).grid(row=0,column=4,padx=2)
 
+#Testing of album display view
 album_size = 82
 
 album_art1 = ImageTk.PhotoImage(
@@ -34,5 +35,6 @@ for i in range (1,5):
         tk.Label(window,image=album_art2).grid(row=i,column=j)
 
 grid[1][1] = tk.Label(window,image=album_art1).grid(row=1,column=1)
+
 
 window.mainloop()
