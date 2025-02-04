@@ -3,8 +3,10 @@ A music player frontend intended for SBCs with small touch screens.
 
 ## Dependencies
 * Python 3 (tested on 3.13)
+    * pexpect (for managing VLC)
+    * tkinter (for the GUI)
+    * pillow  (for album art)
 * VLC (tested on 3.0.21)
-* pexpect library
 
 ## Current hardware
 Running on a Raspberry Pi 3B+ with the RPi 3.5inch SPI Display. [(lcdwiki.com)](http://www.lcdwiki.com/3.5inch_RPi_Display)
